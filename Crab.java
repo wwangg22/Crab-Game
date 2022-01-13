@@ -26,11 +26,11 @@ public class Crab {
         String check2 = inp.nextLine();
         boolean k = true;
         int point=0;
-        if (check2.equals('\n')){
+        if (check2.isEmpty()){
             Die d = new Die();
-            System.out.println("your roll is: ");
+            System.out.print("your roll is: ");
             int roll = d.roll();
-            System.out.print(roll);
+            System.out.println(roll);
             if (roll == 7 || roll == 11){
                 System.out.println("YOU WIN");
                 k=false;
@@ -44,10 +44,11 @@ public class Crab {
             }
             while (k){
                 System.out.println("Press <Enter> to roll the dice...");
-                if (check2.equals('\n')){
-                    System.out.println("your roll is: ");
+                check2 = inp.nextLine();
+                if (check2.isEmpty()){
+                    System.out.print("your roll is: ");
                     int roll2 = d.roll();
-                    System.out.print(roll2);
+                    System.out.println(roll2);
                     if (roll2 == point){
                         System.out.println("you win");
                         k=false;
